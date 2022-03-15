@@ -1,0 +1,5 @@
+/target/
+.settings/
+allure-results/
+.classpath
+.project
