@@ -28,6 +28,8 @@ public class AuraHomeTest {
 	public static void tearDown() throws Exception {
 		driver.quit();
 	}
+    
+    
 
     @Test
     @DisplayName("Check header")
