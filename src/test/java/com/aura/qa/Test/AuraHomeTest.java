@@ -12,16 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AuraHomeTest {
+	
     private static WebDriver driver;
     private String URL_HOME = "https://auragroup.es/";
 
-
     @BeforeAll
     public static void setup() throws Exception {
-
         TestFunctions.loadConfiguration();
-
-
         driver = TestFunctions.configureDriver(Constants.DRIVER_SELECTED);
         driver.manage().window().maximize();
         TestFunctions.setTimeOut(driver);
@@ -65,7 +62,7 @@ public class AuraHomeTest {
     }
     
     @Test
-    @DisplayName("Chech contact form")
+    @DisplayName("Check contact form")
     @Tag("Contact Form")
     public void contactFormTest() {
         driver.get(URL_HOME);
@@ -105,7 +102,7 @@ public class AuraHomeTest {
     } 
     
     @Test
-    @DisplayName("Chech contact title")
+    @DisplayName("Check contact title")
     @Tag("Contact Title")
     public void contactTitleTest() {
     	String TEXT_TO_CHECK = "Contact - Aura IRC";
