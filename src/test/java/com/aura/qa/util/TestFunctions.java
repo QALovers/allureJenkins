@@ -46,7 +46,7 @@ public class TestFunctions {
 		String driverPath="";
 		if (name.toLowerCase().contains(Constants.CHROME)) {
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			if (operatingSystem.toLowerCase().contains(Constants.WINDOWS))
 			{			
 				driverPath=Constants.CHROME_DRIVER_PATH+Constants.EXTENSION_WINDOWS;
