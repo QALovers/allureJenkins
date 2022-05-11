@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.aura.qa.util.TestFunctions;
 
@@ -13,6 +14,7 @@ public class AuraHomePage {
 	
 	WebDriver driver;
 	public AuraHomePage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
     @FindBy(xpath = "(//div[contains(@class,'row_1')]//div[@class='et_pb_text_inner']/p)[1]")
@@ -40,6 +42,8 @@ public class AuraHomePage {
     public void clickAcceptCookies(){
         acceptCookies.click();
     }
+    
+    
     @Step ("Cookies panel displayed")
     public boolean cookiesPanel(){
         return acceptCookies.isDisplayed();

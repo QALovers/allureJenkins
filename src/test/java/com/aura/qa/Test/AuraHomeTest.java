@@ -123,4 +123,21 @@ public class AuraHomeTest {
         TestFunctions.await(driver);
 		assertEquals(TEXT_TO_CHECK, driver.getTitle());
     }
+    
+    
+    @Test
+    @DisplayName("Check if culture page is ok")
+    @Tag("Culture")
+    public void cultureTest() {
+        driver.get(URL_HOME);
+        AuraHomePage home = new AuraHomePage(driver);
+        if (home.cookiesPanel()){
+            home.clickAcceptCookies();
+        }
+        home.clickMenuOption("Cultura");
+        CulturaPage culturaPage = new CulturaPage(driver); 
+        
+        assertTrue(culturaPage.checkMobileImage());        
+        assertTrue(culturaPage.getListSize()==7);        
+    } 
 }

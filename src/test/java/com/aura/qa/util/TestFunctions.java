@@ -61,7 +61,7 @@ public class TestFunctions {
 			
 			FirefoxOptions options = new FirefoxOptions();
 			//Esta linea se utiliza para que no levante firefox (evitar entorno grafico)
-			options.addArguments(Constants.HEADLESS);
+			//options.addArguments(Constants.HEADLESS);
 			//Fijamos idioma por defecto del navegador para que coincida con el nuestro
 			options.addArguments("--lang=es-ES");
 			options.addPreference("intl.accept_languages", "es-ES");
