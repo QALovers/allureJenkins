@@ -133,4 +133,27 @@ public class AuraHomeTest {
 		assertTrue(culturaPage.checkMobileImage());
 		assertTrue(culturaPage.getListSize() == 7);
 	}
+	
+	
+	@Test
+	@DisplayName("Change language")
+	@Tag("Language")
+	public void languageText() {
+		driver.get(URL_HOME);
+		AuraHomePage home = new AuraHomePage(driver);
+		if (home.cookiesPanel()) {
+			home.clickAcceptCookies();
+		}
+				
+		assertTrue(home.checkWelcomeTextEs());
+		
+		if (home.checkLanguageImage()) {
+			home.clickLanguage();
+		} else {
+			System.out.println("Image not found");
+		}	
+		
+		assertTrue(home.checkWelcomeTextEn());
+		
+	}
 }

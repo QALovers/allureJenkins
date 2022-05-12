@@ -25,6 +25,31 @@ public class AuraHomePage {
 
     private final String menuOptions = "//*[@id='top-menu-nav']//a[text()='%s']";
  
+    @FindBy(xpath = "(//div[@class='et_pb_text_inner'])[1]/p")
+    WebElement welcomeText;
+    
+    @FindBy(xpath = "(//img[@class='wpml-ls-flag'])[1]")
+    WebElement changelanguage;
+
+    @Step("Check if languege iamge is visible ")
+    public boolean checkLanguageImage() {
+    	return changelanguage.isDisplayed();
+    }
+
+    @Step("Change Language")
+    public void clickLanguage() {
+    	changelanguage.click();
+    }
+    
+    public boolean checkWelcomeTextEs()
+    {
+    	return welcomeText.getText().contains("Predice");
+    }
+    
+    public boolean checkWelcomeTextEn()
+    {
+    	return welcomeText.getText().contains("Predict");
+    }
     
     @Step("Get header")
     public String getTitle() {

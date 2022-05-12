@@ -13,6 +13,7 @@ import com.aura.qa.util.TestFunctions;
 public class ContactoPage {
 	
 	WebDriver driver;
+	
 	public ContactoPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
