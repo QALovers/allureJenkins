@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -78,9 +79,8 @@ public class TestFunctions {
 			}	
 		}
 		
-		
-		
-		
+		driver.manage().timeouts().implicitlyWait(Constants.TIMEOUT, TimeUnit.SECONDS);
+
 		return driver;
 	}
 
@@ -94,10 +94,6 @@ public class TestFunctions {
 		String timeout = (String) p.get(Constants.CONFIG_TIMEOUT);
 		Constants.TIMEOUT = Integer.parseInt(timeout);
 
-	}
-
-	public static void await(WebDriver theDriver) {
-		theDriver.manage().timeouts().implicitlyWait(Constants.TIMEOUT, TimeUnit.SECONDS);
 	}
 
 	public static void sleep(int miliseconds) {

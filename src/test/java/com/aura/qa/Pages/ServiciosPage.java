@@ -26,7 +26,6 @@ public class ServiciosPage {
 
 	@Step("Check cards")
 	public int checkCards() {
-		TestFunctions.await(driver);
 		return images.size();
 	}
 

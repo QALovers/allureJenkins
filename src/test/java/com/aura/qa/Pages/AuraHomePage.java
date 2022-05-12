@@ -28,7 +28,6 @@ public class AuraHomePage {
     
     @Step("Get header")
     public String getTitle() {
-    	TestFunctions.await(driver);
         return tituloPagina.getText();
     }
     

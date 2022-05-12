@@ -29,7 +29,6 @@ public class ContactoPage {
  
     @Step("Check Send Button is displayed")
     public boolean checkSendButtonIsDisplayed(){
-    	TestFunctions.await(driver);
         return sendButton.isDisplayed();
     }
     
@@ -41,7 +40,6 @@ public class ContactoPage {
     
     @Step("Click english flag")
     public void clickEnglishFlag(){
-    	TestFunctions.await(driver);
     	langIcon.click();
     }
    
