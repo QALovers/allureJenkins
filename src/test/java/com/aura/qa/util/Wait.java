@@ -77,7 +77,7 @@ public class Wait {
 		}
 	}
 
-	@Deprecated
+
 	public static void waitSeconds(int seconds) {
 		if (seconds > 0) {
 			try {

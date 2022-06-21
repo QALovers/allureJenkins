@@ -2,6 +2,7 @@ package com.aura.qa.Test;
 
 import com.aura.qa.Pages.AuraHomePage;
 import com.aura.qa.util.TestFunctions;
+import com.aura.qa.util.Wait;
 import com.aura.qa.Constants;
 import com.aura.qa.Pages.*;
 import org.junit.jupiter.api.*;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class GooleHomeTest {
+public class GoogleHomeTest {
 
 	private static WebDriver driver;
 	private String URL_HOME = "https://auragroup.es/";
@@ -30,16 +31,18 @@ public class GooleHomeTest {
 	}
 
 	@Test
-	@DisplayName("Check header")
-	@Tag("Header")
-	public void headerTest() {
+	@DisplayName("Check Google Search")
+	@Tag("Search")
+	public void searchTest() {
 		driver.get("https://www.google.com/");
 		GooglePage googlePage = new GooglePage(driver);
-
+		Wait.waitSeconds(2);
+		googlePage.clickAcceptButton();
+		Wait.waitSeconds(2);
+		assertTrue(googlePage.checkGoogleImage());
+		Wait.waitSeconds(2);
 		
-			
-		
-		assertTrue(true);
+		System.out.println("test");
 	}
 
 	
