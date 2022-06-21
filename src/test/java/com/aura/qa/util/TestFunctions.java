@@ -47,7 +47,10 @@ public class TestFunctions {
 		String driverPath="";
 		if (name.toLowerCase().contains(Constants.CHROME)) {
 			ChromeOptions options = new ChromeOptions();
-			//options.addArguments("--headless");
+			if (Constants.HEADLESS) {
+				options.addArguments("--headless");
+				options.addArguments("--window-size=1920,1080");
+			}
 			if (operatingSystem.toLowerCase().contains(Constants.WINDOWS))
 			{			
 				driverPath=Constants.CHROME_DRIVER_PATH+Constants.EXTENSION_WINDOWS;
@@ -62,7 +65,9 @@ public class TestFunctions {
 			
 			FirefoxOptions options = new FirefoxOptions();
 			//Esta linea se utiliza para que no levante firefox (evitar entorno grafico)
-			//options.addArguments(Constants.HEADLESS);
+			if (Constants.HEADLESS) {
+				options.addArguments("--headless");
+			}
 			//Fijamos idioma por defecto del navegador para que coincida con el nuestro
 			options.addArguments("--lang=es-ES");
 			options.addPreference("intl.accept_languages", "es-ES");
@@ -93,7 +98,9 @@ public class TestFunctions {
 
 		String timeout = (String) p.get(Constants.CONFIG_TIMEOUT);
 		Constants.TIMEOUT = Integer.parseInt(timeout);
-
+		
+		String head = (String) p.get(Constants.CONFIG_HEADLESS);
+		Constants.HEADLESS = Boolean.parseBoolean(head);
 	}
 
 	public static void sleep(int miliseconds) {
