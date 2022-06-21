@@ -20,7 +20,7 @@ public class AuraHomePage {
     @FindBy(xpath = "(//div[contains(@class,'row_1')]//div[@class='et_pb_text_inner']/p)[1]")
     WebElement tituloPagina;
 
-    @FindBy(id = "catapultCookie")
+    @FindBy(xpath = "//aside//button[1]")
     WebElement acceptCookies;
 
     private final String menuOptions = "//*[@id='top-menu-nav']//a[text()='%s']";

@@ -1,2 +1,2 @@
-chrome driver version: 91.0.4472.101
+chrome driver version: 102.0.5005.61
 

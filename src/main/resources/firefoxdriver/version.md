@@ -1,2 +1,2 @@
-gecko driver version: 0.29.1
+gecko driver version: 0.31.0
 
